@@ -6,6 +6,8 @@ import Fila from '../../assets/fila.jpg'
 
 const DashHome = () => {
 
+  // This page was worked on by Awogbuyi Timothy
+
   const topProds = [
     {id:'1', image:Fila, title:'Fila disruptor sneakers', price: 2500},
     {id:'2', image:Nike, title:'Nike Air sneakers', price: 3000},
@@ -19,6 +21,7 @@ const DashHome = () => {
 
   return (
     <div className='font-Poppins'>
+      {/* -----------------------------------------------------------------------------------------------------------Overview Div done by Awogbuyi Timothy */}
       <div className='flex justify-between pt-6 items-end'>
         <h2 className='text-xl font-semibold w-[65%] text-bkdeepblue'>Overview</h2>
         <div className='flex w-[33%] items-center gap-2 justify-end'>
@@ -27,8 +30,10 @@ const DashHome = () => {
           <div className='text-[9px] text-bkdeepblue font-semibold bg-white border shadow-sm border-bkgrey py-2 px-4 rounded flex items-center gap-4'>22-july-2022<i className='fa fa-calendar'></i></div>
         </div>
       </div>
+
+      {/* ------------------------------------------------------------------------------------------------Second section begins here */}
       <div className='flex justify-between mt-6'>
-        <div className='w-[65%] max-h-[80vh] bg-green-300 mb-2 flex flex-col gap-5'>
+        <div className='w-[65%] max-h-[80vh] min-h-[80vh] mb-2 flex flex-col gap-5'>
           <div className='flex justify-between'> 
             <div className='w-[31%] bg-white rounded shadow-sm p-4 flex flex-col gap-1'>
               <p className='text-bkgrey font-medium'>Total Profit</p>
@@ -52,7 +57,10 @@ const DashHome = () => {
               </div>
             </div>
           </div>
-          <div className='w-full p-4 shadow-sm bg-white '>
+
+          {/* --------------------------------------------------------------------------------------------------------------Sales report */}
+
+          <div className='w-full h-[80vh] p-4 shadow-sm bg-white flex flex-col flex-1 rounded'>
             <div className='flex  justify-between text-bkdeepblue'>
               <h2 className='font-bold '>Sales Report</h2>
               <div className='flex gap-4'>
@@ -71,10 +79,11 @@ const DashHome = () => {
         </div>
 
         {/* -------------------------------------------------------------------------------------------------Top Products */}
-        <div className='w-[33%] h-[80vh] bg-white shadow-sm rounded '>
+        <div className='w-[33%] h-[80vh] overflow-hidden bg-white shadow-sm rounded '>
           <div className=' py-5 px-4 w-full border-b'>
             <h2 className='font-semibold text-bkdeepblue '>Top Selling Products</h2>
           </div>
+          {/* ----------------------------------------------------------------------------------------mapped products here */}
           <div>
             {
               topProds && topProds.map((topProd) => 
@@ -83,13 +92,23 @@ const DashHome = () => {
                     <img src={topProd.image}></img>
                   </div>
                   <h3 className='flex-1 font-semibold text-sm ml-2'>{ topProd.title }</h3>
-                  <p> ${ topProd.price }</p>
+                  <p className='text-xs font-bold '> ${ topProd.price }</p>
                 </div>
               )
             }
           </div>
         </div>
       </div>
+
+      {/* ------------------------------------------------------------------------------------------------------------third section begins here*/}
+      <div className='w-full mt-3 flex justify-between'>
+        <div className='w-[65%] rounded flex justify-between'>
+          <div className='w-[44%] shadow-sm rounded bg-white p-4 '></div>
+          <div className='w-[53%] shadow-sm rounded bg-white p-4 '></div>
+        </div>
+        <div className='w-[33%] bg-white p-4 rounded shadow-sm '></div>
+      </div>
+      <div className='h-[10rem]'></div>
     </div>
   )
 }
