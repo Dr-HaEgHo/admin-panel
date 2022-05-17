@@ -38,9 +38,8 @@ const Dashboard = () => {
                     <DashHome />
                 </div>
 
-                {/* ------------------------------------------------------------------------------------------------------------------------------------------Teams Section done by-[Please put your name here thank you] */}
-                <div id='teams' className='w-full px-4 hidden'>
-
+                {/* ------------------------------------------------------------------------------------------------------------------------------------------Teams Section done by-[Letam Ugwuadu] */}
+                <div id='teams' className='w-full px-4'>
                     <Teams />
                 </div>
                 
