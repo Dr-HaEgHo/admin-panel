@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 const Signup = () => {
 
+
   const [errorMsg, setErrorMsg] = useState('');
   const [data, setData] = useState({});
   const [formValid, setFormValid] = useState(false);
@@ -15,6 +16,9 @@ const Signup = () => {
     password: "",
     confirmPassword: ""
   });
+
+   sessionStorage.setItem('userDetails', JSON.stringify({ ...form }))
+  
 
   useEffect(() => {
     if (
@@ -57,6 +61,8 @@ const Signup = () => {
     })
 
   }
+
+  
 
   const submitHandler = (e) => {
     // const errorMsg = document.getElementById('error-msg')

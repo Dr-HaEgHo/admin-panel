@@ -11,7 +11,11 @@ const Login = () => {
         password : "",
     })
 
+    sessionStorage.setItem('userDetails', JSON.stringify({ ...form }))
+
     const logDets = JSON.parse(sessionStorage.getItem('userDetails'));
+    
+
     // console.log(logDets)
 
     useEffect(() => {
@@ -23,7 +27,7 @@ const Login = () => {
             setFormValid(false);
         }
 
-        if (form.email == logDets.email) {
+        if (form.email === logDets.email) {
             setIsUser(true);
         } else {
             setIsUser(false);
