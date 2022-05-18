@@ -68,11 +68,10 @@ const Login = () => {
         if (!formValid) {
             setErrorMsg('Please fill all fields');
         } else if (!isUser) {
-            setErrorMsg('This user does not exist')
+            setErrorMsg('This user does not exist, all inputs are case sensitive')
         }else if(!isPassword){
             setErrorMsg('You have entered an incorrect password');
         } else {
-            alert('all is well with this page you can proceed')
             window.location='/dashboard'
          }
 
