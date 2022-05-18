@@ -11,7 +11,7 @@ const Login = () => {
         password : "",
     })
 
-    // sessionStorage.setItem('userDetails', JSON.stringify({ ...form }))
+    sessionStorage.setItem('userDetails', JSON.stringify({ ...form }))
 
     const logDets = JSON.parse(sessionStorage.getItem('userDetails'));
     
