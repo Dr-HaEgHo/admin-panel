@@ -8,7 +8,9 @@ import Teams from './Teams/Teams'
 const Dashboard = () => {
 
     
-    const showDash= () => {
+    const showDash = (e) => {
+        
+
         const dash = document.getElementById('dashboard')
         const teams = document.getElementById('teams')
         const client = document.getElementById('clients')
@@ -98,7 +100,7 @@ const Dashboard = () => {
                     <p className='text-xs'>{ loggedDets.jobTitle }</p>
               </div>
               <div className='py-10 text-xs flex flex-col'>
-                  <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4  hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center ' onClick={showDash}><i className='fa fa-home'></i><p>Home</p></button>
+                  <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4 hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center ' onClick={showDash}><i className='fa fa-home'></i><p>Home</p></button>
                   <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4  hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center' onClick={showTeams} ><i className='fa fa-users'></i><p>Team Members</p></button>
                   <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4  hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center' onClick={showClients} ><i className='fa fa-user-plus'></i><p>Clients</p></button> 
                   <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4  hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center' onClick={showProds} ><i className='fa fa-shopping-bag'></i><p>Products</p></button>
@@ -114,7 +116,7 @@ const Dashboard = () => {
                     <DashHome />
                 </div>
 
-<
+
                 {/* ------------------------------------------------------------------------------------------------------------------------------------------Teams Section done by-[Letam Ugwuadu] */}
 
                 <div id='teams' className='w-full hidden px-4'>
