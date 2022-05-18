@@ -24,13 +24,13 @@ const Teams = () => {
               {/* <img src={ } alt='member image' className='h-full  transform rotate-90' /> */}
                 </div>
                 <div className='flex flex-1 w-[30%]'>
-                  <h3 className='font-semibold text-sm ml-2'>Name</h3>
+                  <h3 className='font-semibold text-sm ml-2'>Full Name</h3>
                 </div>
                 <div className='w-[20%] flex justify-start flex-1'>
                   <p className='font-semibold text-sm '>email</p>
                 </div>
                 <div className='w-[20%] flex flex-1 justify-start'>
-                  <h3 className=' font-semibold text-sm '>Phone No.</h3>
+                  <h3 className=' font-semibold text-sm '>Phone Number</h3>
                 </div>
                 <div className='w-[10%]'>
                   <h3 className='font-semibold text-sm '>Gender </h3>

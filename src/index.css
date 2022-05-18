@@ -78,6 +78,15 @@ p {
     line-height:1rem;
 }
 
+#card:hover #name-tag{
+    opacity: 0;
+    top: 0;
+}
+
+#card:hover #tag{
+    top : 50%;
+}
+
 
 body {
     @apply bg-bkwhite 
