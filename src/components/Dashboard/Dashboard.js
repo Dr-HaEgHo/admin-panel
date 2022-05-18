@@ -82,7 +82,7 @@ const Dashboard = () => {
 
     const handleLogout = () => {
         window.location = '/login';
-        // sessionStorage.clear();
+        sessionStorage.clear();
         setIsLoggedOut(true)
     }
 

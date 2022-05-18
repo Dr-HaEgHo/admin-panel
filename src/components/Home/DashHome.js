@@ -3,6 +3,9 @@ import Graph1 from '../../assets/graph1.jpg'
 import Cap from '../../assets/nike-cap.jpg'
 import Nike from '../../assets/nike1.webp'
 import Fila from '../../assets/fila.jpg'
+import RoundChart from '../../assets/roundchart.jpg'
+import barChart from '../../assets/bar-chart.jpg'
+import adBanner from '../../assets/adbanner.jpg'
 
 const DashHome = () => {
 
@@ -103,12 +106,32 @@ const DashHome = () => {
       {/* ------------------------------------------------------------------------------------------------------------third section begins here*/}
       <div className='w-full mt-3 flex justify-between'>
         <div className='w-[65%] rounded flex justify-between'>
-          <div className='w-[44%] shadow-sm rounded bg-white p-4 '></div>
-          <div className='w-[53%] shadow-sm rounded bg-white p-4 '></div>
+          <div className='w-[44%] flex flex-col justify-between'>
+            <div className='rounded shadow-sm p-4 h-[60%] bg-white overflow-hidden'>
+              <div className='w-full h-full overflow-hidden rounded'>
+                <img className='w-full' src={adBanner} alt='place ads here'></img>
+              </div>
+            </div>
+            <div className='rounded shadow-sm p-4 h-[35%] bg-bkdeepblue'>
+              <div className='flex items-center mt-2 gap-4'>
+                <i className='fa fa-pie-chart text-7xl text-bkwhite'></i>
+                <div className='flex flex-col gap-2'>
+                  <p className='text-[11px]'>Weekly Sales (%) : <span className='font-semibold underline'>70%</span></p>
+                  <p className='text-[11px]'>Weekly Expenditure (%) : <span className='font-semibold underline'>20%</span></p>
+                </div>
+            </div>
+             </div>
+          </div>
+          <div className='w-[53%] shadow-sm rounded bg-white p-4 '>
+            <h3 className='text-bkdeepblue font-medium'>Weekly Line Stats</h3>
+            <img className='w-full mt-24' src={barChart} alt='chart.jpg'></img>
+          </div>
         </div>
-        <div className='w-[33%] bg-white p-4 rounded shadow-sm '></div>
+        <div className='w-[33%] bg-white p-4 rounded shadow-sm '>
+            <img className='w-full' src={RoundChart} alt='chart.jpg'></img>
+        </div>
       </div>
-      <div className='h-[10rem]'></div>
+      <div className='h-[3rem]'></div>
     </div>
   )
 }

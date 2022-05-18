@@ -11,14 +11,14 @@ const Login = () => {
         password : "",
     })
 
-    sessionStorage.setItem('userDetails', JSON.stringify({ ...form }))
-
-    const logDets = JSON.parse(sessionStorage.getItem('userDetails'));
     
-
+    
+    // sessionStorage.setItem('userDetails', JSON.stringify({ ...form }))
     // console.log(logDets)
-
+    
     useEffect(() => {
+        const logDets = JSON.parse(sessionStorage.getItem('userDetails'))
+        
         if (
             form.email !== '' && form.password !== ''
         ) {
@@ -27,22 +27,21 @@ const Login = () => {
             setFormValid(false);
         }
 
-        if (form.email === logDets.email) {
-            setIsUser(true);
-        } else {
+        if (!logDets) {
             setIsUser(false);
+        } else if (logDets) {
+            setIsUser(true)
         }
 
-        if (form.password == logDets.password) {
-            setIsPassword(true);
-        } else {
+        if (!logDets) {
             setIsPassword(false);
+        } else if (logDets) {
+            setIsPassword(true);
         }
-
-        console.log(form)
-        console.log('formValid:' + formValid)
-        console.log("email check:" + form.email + logDets.email + " :"+ isUser);
-    },[form.email, form.password])
+        console.log(logDets)
+        console.log(isPassword)
+        console.log(isUser)
+    }, [form.email, form.password])
     
 
     const handleChange = (e) => {
@@ -53,6 +52,8 @@ const Login = () => {
     }
 
     const submitHandler = (e) => {
+        const logDets = JSON.parse(sessionStorage.getItem('userDetails'))
+
         // if (!formValid ) {
         //     setErrorMsg('Please fill all fields')
         // } else if (!isPassword) {
@@ -67,13 +68,19 @@ const Login = () => {
         // }
         if (!formValid) {
             setErrorMsg('Please fill all fields');
-        } else if (!isUser) {
-            setErrorMsg('This user does not exist, all inputs are case sensitive')
-        }else if(!isPassword){
+        } else if (isUser === true && form.email !== logDets.email) {
+            setErrorMsg('This user does not exist, would you like to sign up?')
+        }else if(isPassword ===true && form.password !== logDets.password){
             setErrorMsg('You have entered an incorrect password');
-        } else {
+        } else if (isPassword === true && form.password === logDets.password) {
+            console.log('you can sign in')
             window.location='/dashboard'
-         }
+        }
+        
+
+        if (!logDets) {
+            setErrorMsg("User doesn't exist, please sign up")
+        }
 
 
         e.preventDefault()

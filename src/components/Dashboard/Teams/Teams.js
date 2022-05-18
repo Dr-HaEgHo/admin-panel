@@ -37,8 +37,8 @@ const Teams = () => {
                 </div>
               </div>
           {
-            teamData && teamData.map((member) =>
-              <div className='text-bkdeepblue border-b flex items-center py-2 gap-4'>
+            teamData ? teamData.map((member, idx) =>
+              <div key={idx} className='text-bkdeepblue border-b flex items-center py-2 gap-4'>
                 <div className='w-5'>
                   <h3 className='text-xs font-semibold'>{member.id}</h3>
                 </div>
@@ -58,7 +58,7 @@ const Teams = () => {
                   <h3 className='text-xs'>{member.gender}</h3>
                 </div>
               </div>
-            )
+            ) : null
           }
           </div>
       </div>

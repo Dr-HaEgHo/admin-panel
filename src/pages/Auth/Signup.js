@@ -17,8 +17,6 @@ const Signup = () => {
     confirmPassword: ""
   });
 
-   sessionStorage.setItem('userDetails', JSON.stringify({ ...form }))
-  
 
   useEffect(() => {
     if (
