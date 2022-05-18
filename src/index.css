@@ -10,6 +10,10 @@
     @apply bg-bkpurple text-white;
 }
 
+.btn-deepblue {
+    @apply bg-bkdeepblue text-white;
+}
+
 .btn-white {
     @apply bg-bkwhite;
 }
@@ -31,11 +35,50 @@ p {
 }
 
 .dash-btn{
-    @apply bg-bkpurple 
+    @apply bg-bkpurple text-bkred
+}
+
+/* .still-good{
+    @apply 'border bg-transparent focus:outline-none border-bkpurple mb-2 w-full p-2 rounded-md placeholder: text-xs'
+} */
+
+.good{
+    border-radius: 0.375rem;
+    border: 1px rgba(82,103,223) solid;
+    padding: 0.5rem;
+    background: transparent;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    line-height: 1rem;
+    font-size:0.75rem;
+}
+
+.good::placeholder{
+    font-size:0.75rem;
+    line-height:1rem;
+}
+
+.good:focus, .bad:focus{
+    outline: none;
+}
+
+.bad{
+    border-radius: 0.375rem;
+    border: 1px rgba(250, 89, 89) solid;
+    padding:  0.5rem;
+    background: transparent;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    font-size:0.75rem;
+    line-height: 1rem
+}
+
+.bad::placeholder{
+    font-size:0.75rem;
+    line-height:1rem;
 }
 
 
-
 body {
-    @apply bg-bkwhite
+    @apply bg-bkwhite 
 }

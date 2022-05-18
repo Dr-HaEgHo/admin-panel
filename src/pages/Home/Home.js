@@ -6,6 +6,9 @@ import { Link } from 'react-router-dom'
 
 
 const Home = () => {
+
+  
+
   return (
       <div className=''>
           {/* <div className='absolute top-0 h-screen overflow-hidden opacity-20 -z-10'>
