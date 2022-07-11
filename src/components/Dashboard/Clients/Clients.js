@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, {useState, useEffect} from 'react'
 // import './clients.css'
 
@@ -6,11 +7,12 @@ import React, {useState, useEffect} from 'react'
 const Clients = () => {
   const [Customers, setCustomers] = useState([])
 
+  const url = process.env.REACT_APP_CLIENTS_URL;
+
   useEffect(() =>{
-    fetch('https://fakerapi.it/api/v1/companies?_quantity=10')
-    .then(response => response.json())
-    .then(data => setCustomers(data.data))
-  },[]);
+    axios.get(url)
+      .then(response => setCustomers(response.data.data));
+  },[url]);
   
 
 
@@ -50,7 +52,7 @@ const Clients = () => {
                   <h3 className='text-xs font-semibold'>{member.id}</h3>
                 </div>
                 <div className='w-[30px] h-[30px] rounded-full overflow-hidden'>
-                  <img src={member.image} alt='member image' className='h-full  transform rotate-90' />
+                  <img src={member.image} alt='member' className='h-full  transform rotate-90' />
                 </div>
                 <div className='flex flex-1 border-x w-[30%]'>
                   <h3 className='font-semibold text-sm ml-2'>{member.name}</h3>

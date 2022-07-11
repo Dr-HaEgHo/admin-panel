@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const Signup = () => {
 
@@ -70,7 +72,12 @@ const Signup = () => {
       setErrorMsg('Passwords do not tally')
     } else {
       setErrorMsg('')
-      window.location = '/dashboard'
+
+      toast.success(`Welcome to Panel-4,${form.fullname}`)
+
+      setTimeout(() => {
+        window.location = '/dashboard'
+      }, 2000);
     }
     setData({ ...form })
 
@@ -85,7 +92,7 @@ const Signup = () => {
 
     if (pwd.type && Cpwd.type === "password") {
       pwd.type = 'text'
-      Cpwd.type = 'text'
+      Cpwd.type = 'text' 
     } else {
       pwd.type = 'password'
       Cpwd.type = 'password'
@@ -96,7 +103,8 @@ const Signup = () => {
 
 
   return (
-      <div>
+    <div> 
+      <ToastContainer/>
       <div className='container font-Poppins'>
         <div className='w-1/2 bg-bkwhite shadow shadow-bkdeepblue/[.40] rounded-lg p-20 my-20 mx-auto'>
           

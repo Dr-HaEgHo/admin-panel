@@ -1,13 +1,16 @@
+import axios from "axios";
 import React, { useState, useEffect } from "react"
 
 
-const Products =  () =>{
-    const [Products, setProducts] = useState([])
+const Products = () => {
+  
+  const [Products, setProducts] = useState([])
+  
+  const prodApi = process.env.REACT_APP_PRODUCTS_URL;
 
     useEffect (() => {
-        fetch('https://fakerapi.it/api/v1/products?_quantity=52')
-        .then(res => res.json())
-        .then(data => setProducts(data.data))
+        axios.get(prodApi)
+        .then(res => setProducts(res.data.data))
 
     }, []);
     

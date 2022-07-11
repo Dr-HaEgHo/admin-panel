@@ -8,6 +8,10 @@ import {
 import Login from "./pages/Auth/Login";
 import Dashboard from "./components/Dashboard/Dashboard";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import 'react-toastify/dist/ReactToastify.css'
+import DashHome from "./components/Home/DashHome";
+import Teams from "./components/Dashboard/Teams/Teams";
+import SideBar from "./components/Dashboard/SideBar/SideBar";
 
 function App() {
   return (
@@ -17,10 +21,11 @@ function App() {
         <Route path='/' element={<Home/>} />
         <Route path='/login' element={<Login/>} />
         <Route path='/signup' element={<Signup />} />
-        
-        <Route element={ <ProtectedRoutes/> } >
+
+        {/* Protected the dashboard route so only logged in users can have access */}
+        <Route element={<ProtectedRoutes />} >
           <Route path='/*' element={<Dashboard />} />
-      </Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
