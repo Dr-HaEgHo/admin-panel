@@ -41,10 +41,10 @@ const SideBar = () => {
                     <p className='text-xs'>{ loggedDets.jobTitle }</p>
               </div>
               <div className='py-10 text-xs flex flex-col'>
-                  <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4 hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center ' onClick={handleHome}><i className='fa fa-home'></i><p>Home</p></button>
-                  <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4  hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center' onClick={handleTeams}><i className='fa fa-users'></i><p>Team Members</p></button>
-                  <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4  hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center' onClick={handleClients}><i className='fa fa-user-plus'></i><p>Clients</p></button> 
-                  <button className='w-full text-left px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4  hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center' onClick={handleProducts} ><i className='fa fa-shopping-bag'></i><p>Products</p></button>
+                  <button className={location === "/dashboard" ? "clicked" : "not-clicked"}  onClick={handleHome} ><i className='fa fa-home'></i><p>Home</p></button>
+                  <button className={location === "/dashboard/teams" ? "clicked" : "not-clicked"} onClick={handleTeams}><i className='fa fa-users'></i><p>Team Members</p></button>
+                  <button className={location === "/dashboard/clients" ? "clicked" : "not-clicked"} onClick={handleClients}><i className='fa fa-user-plus'></i><p>Clients</p></button> 
+                  <button className={location === "/dashboard/products" ? "clicked" : "not-clicked"} onClick={handleProducts} ><i className='fa fa-shopping-bag'></i><p>Products</p></button>
               </div>
               <div className='py-10'>
                   <button onClick={handleLogout} className='w-full text-left text-xs px-5 bg-bkdeepblue py-4 focus:bg-[rgba(255,255,255,0.3)] border-bkwhite focus:border-l-4   hover:bg-[rgba(255,255,255,0.2)] duration-300 flex gap-6 items-center '><i className='fa fa-sign-out'></i> Log Out</button>

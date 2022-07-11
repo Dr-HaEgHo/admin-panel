@@ -42,6 +42,35 @@ p {
     @apply 'border bg-transparent focus:outline-none border-bkpurple mb-2 w-full p-2 rounded-md placeholder: text-xs'
 } */
 
+.clicked{
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+    text-align: left;
+    padding: 1rem 1.25rem 1rem 1.25rem;
+    background:rgba(255, 255, 255, 0.3);
+    border-left: 4px #fff solid;
+    transition: .2s ease all;
+    
+}
+
+.clicked:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.not-clicked:hover{
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.not-clicked{
+    width: 100%;
+    display: flex;
+    gap: 1.5rem;
+    text-align: left;
+    padding: 1rem 1.25rem 1rem 1.25rem;
+    transition: .2s ease all;
+}
+
 .good{
     border-radius: 0.375rem;
     border: 1px rgba(82,103,223) solid;
