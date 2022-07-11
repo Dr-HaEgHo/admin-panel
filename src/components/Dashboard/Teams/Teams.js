@@ -19,7 +19,7 @@ const Teams = () => {
           }
         })
         .catch((err) => {
-          toast.error('Somethin went wrong ')
+          toast.error('Something went wrong ')
         })
       
     }, [url])
