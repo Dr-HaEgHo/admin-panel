@@ -21,7 +21,7 @@ const Products = () => {
         <div className='mt-6'>
             <h3 className='text-bkdeepblue font-semibold text-xl  '>Our Products</h3>
         </div>
-        <div className='rounded-md mt-10 flex flex-wrap w-full justify-between'>
+        <div className='rounded-md mt-10 flex flex-wrap w-full justify-between gap-24'>
           
           {
             Products && Products.map((product) =>

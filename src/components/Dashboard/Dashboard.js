@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Link } from 'react-router-dom'
+import PageNotFound from '../../pages/PageNotFound'
 import DashHome from '../Home/DashHome'
 import Clients from './Clients/Clients'
 import Products from './Products/Products'
@@ -21,42 +22,41 @@ const Dashboard = () => {
     
 
     
-
+    
     
 
 
     return ( 
-        <div className='font-Poppins text-bkwhite flex '>
-                <div className=''>
-                    <SideBar/>
-                </div>
-          
+        <div className='font-Poppins text-bkwhite'>
+            <div className=''>
+                <SideBar/>
+            </div>
+          {/* ---------------------------------------------------- flex */}
             <div id='dash-content' className='w-[77%] absolute top-0 left-[23%]'>
-                {/* ------------------------------------------------------------------------------------------------------------------------------------------Dashboard section done by-[Awogbuyi Timothy] */}
                 
-                <div id='dashboard' className='w-full px-4'>
-                    <DashHome />
+                <div className='w-full px-4'>
+                    {
+                        window.location.pathname === "/dashboard" || window.location.pathname === "/dashboard/" ? <DashHome/> : <PageNotFound/> &&
+                        window.location.pathname === "/dashboard/teams" ? <Teams/> : <PageNotFound/> &&
+                        window.location.pathname === "/dashboard/clients" ? <Clients/> : <PageNotFound/> &&
+                        window.location.pathname === "/dashboard/products" ? <Products/> : <PageNotFound/>
+                    }
                 </div>
 
-
-                {/* ------------------------------------------------------------------------------------------------------------------------------------------Teams Section done by-[Letam Ugwuadu] */}
-
-                <div id='teams' className='w-full hidden px-4'>
-                    <Teams /> 
-                </div>
-                
-                {/* ------------------------------------------------------------------------------------------------------------------------------------------Clients Section Done by-[Please put your name here thank you] */}
-                <div id='clients' className='w-full px-4 hidden'>
-                    <Clients />
-                </div>
-                
-                {/* ------------------------------------------------------------------------------------------------------------------------------------------Products section done by-[Please put your name here thank you] */}
-                <div id='products' className='w-full px-4 hidden'>
-                    <Products />
-              </div>
           </div>
     </div>
   )
 }
 
 export default Dashboard;
+            //     <div id='teams' className='w-full hidden px-4'>
+            //         <Teams /> 
+            //     </div>
+                
+            //     <div id='clients' className='w-full px-4 hidden'>
+            //         <Clients />
+            //     </div>
+                
+            //     <div id='products' className='w-full px-4 hidden'>
+            //         <Products />
+            //   </div>

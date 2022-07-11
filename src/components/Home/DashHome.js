@@ -6,6 +6,11 @@ import Fila from '../../assets/fila.jpg'
 import RoundChart from '../../assets/roundchart.jpg'
 import barChart from '../../assets/bar-chart.jpg'
 import adBanner from '../../assets/adbanner.jpg'
+import SalesChart from './SalesChart'
+import BarGraph from './BarGraph'
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar'
+import "react-circular-progressbar/dist/styles.css"
+
 
 const DashHome = () => {
 
@@ -22,9 +27,11 @@ const DashHome = () => {
     {id:'8', image:Nike, title:'Nike Air sneakers', price: 3000},
   ];
 
+  
+
   return (
     <div className='font-Poppins'>
-      {/* -----------------------------------------------------------------------------------------------------------Overview Div done by Awogbuyi Timothy */}
+      {/* -----------------------------------------------------------------------------------------------------------Overview Div*/}
       <div className='flex justify-between pt-6 items-end'>
         <h2 className='text-xl font-semibold w-[65%] text-bkdeepblue'>Overview</h2>
         <div className='flex w-[33%] items-center gap-2 justify-end'>
@@ -77,7 +84,8 @@ const DashHome = () => {
                 </div>
               </div>
             </div>
-            <img className='w-full pb-3' src={Graph1} alt='graph-analytics.jpg'></img>
+            {/* <img className='w-full pb-3' src={Graph1} alt='graph-analytics.jpg'></img> */}
+            <SalesChart style={{fontSize:"15px"}} />
           </div>
         </div>
 
@@ -104,7 +112,7 @@ const DashHome = () => {
       </div>
 
       {/* ------------------------------------------------------------------------------------------------------------third section begins here*/}
-      <div className='w-full mt-3 flex justify-between'>
+      <div className='w-full mt-3 h-[53vh] flex justify-between'>
         <div className='w-[65%] rounded flex justify-between'>
           <div className='w-[44%] flex flex-col justify-between'>
             <div className='rounded shadow-sm p-4 h-[60%] bg-white overflow-hidden'>
@@ -122,13 +130,32 @@ const DashHome = () => {
             </div>
              </div>
           </div>
-          <div className='w-[53%] shadow-sm rounded bg-white p-4 '>
-            <h3 className='text-bkdeepblue font-medium'>Weekly Line Stats</h3>
-            <img className='w-full mt-24' src={barChart} alt='chart.jpg'></img>
+          <div className='max-w-[53%] min-w-[53%] h-[100%]  shadow-sm rounded bg-white p-4 '>
+            <div className='flex items-center justify-between'>
+              <h3 className='text-bkdeepblue font-medium'>Weekly Line Stats</h3>
+              <a className='text-bkpurple text-xs  hover:text-bkdeepblue hover:underline cursor-pointer'>View More</a>
+            </div>
+            {/* <img className='w-full mt-24' src={barChart} alt='chart.jpg'></img> */}
+            <div className='w-[100%] h-[80%] m-auto mt-8'>
+              <BarGraph/>
+            </div>
           </div>
         </div>
-        <div className='w-[33%] bg-white p-4 rounded shadow-sm '>
-            <img className='w-full' src={RoundChart} alt='chart.jpg'></img>
+        <div className='w-[33%] bg-white p-4 rounded shadow-sm relative'>
+          {/* <img className='w-full' src={RoundChart} alt='chart.jpg'></img> */}
+          <CircularProgressbar 
+            value={60}
+            
+            styles={buildStyles({
+              backgroundColor: "#fafafa",
+              trailColor: "#f1f2",
+              pathColor: "#ff7200",
+            })}
+          />
+          <div className='absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center'>
+            <p className='text-slate-800 font-bold text-3xl'>129,345</p>
+            <p className='text-[#ccc] font-semibold text-base'>Products Sold</p>
+          </div>
         </div>
       </div>
       <div className='h-[3rem]'></div>

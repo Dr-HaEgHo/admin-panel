@@ -12,6 +12,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import DashHome from "./components/Home/DashHome";
 import Teams from "./components/Dashboard/Teams/Teams";
 import SideBar from "./components/Dashboard/SideBar/SideBar";
+import Products from "./components/Dashboard/Products/Products";
+import Clients from "./components/Dashboard/Clients/Clients";
 
 function App() {
   return (
@@ -25,6 +27,9 @@ function App() {
         {/* Protected the dashboard route so only logged in users can have access */}
         <Route element={<ProtectedRoutes />} >
           <Route path='/*' element={<Dashboard />} />
+          {/* <Route path='dashboard/teams' element={<Teams/> } /> */}
+          {/* <Route path='dashboard/products' element={<Products/> } /> */}
+          {/* <Route path='dashboard/clients' element={<Clients/> } /> */}
         </Route>
       </Routes>
     </BrowserRouter>
